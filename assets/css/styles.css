@@ -60,6 +60,8 @@ h4, h5 { font-size: 1.5em; }
 /* Layout */
 body, html {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .container {
     display: grid;
@@ -69,8 +71,21 @@ body, html {
         "header header"
         "nav main"
         "footer footer";
-    grid-gap: 0.75em;
+    grid-gap: 0.5em;
     height: 100%;
+    margin: 0 1em;
+}
+@media screen and (max-width: 750px) {
+    .container {
+        grid-template-rows: 2fr 2fr 8fr 1fr;
+        grid-template-columns: 12fr;
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    margin: 0 0.5em;
+    }
 }
 header {
     grid-area: header;
@@ -78,16 +93,20 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 0.5em;
 }
 nav {
     grid-area: nav;
     background-color: tomato;
+    padding: 0.5em;
 }
 main {
     grid-area: main;
-    /* background-color: lightblue; */
+    background-color: lightblue;
+    padding: 0.5em;
 }
 footer {
     grid-area: footer;
     background-color: lightgreen;
+    padding: 0.5em;
 }
