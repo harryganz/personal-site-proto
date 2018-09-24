@@ -56,14 +56,13 @@ h4, h5 { font-size: 1.5em; }
 .text-center {
     text-align: center;
 }
-
-/* Layout */
+/* Grid Layout */
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
 }
-.container {
+.wrapper {
     display: grid;
     grid-template-rows: 2fr 8fr 1fr;
     grid-template-columns: 2fr 10fr;
@@ -76,7 +75,7 @@ body, html {
     margin: 0 1em;
 }
 @media screen and (max-width: 750px) {
-    .container {
+    .wrapper {
         grid-template-rows: 2fr 2fr 8fr 1fr;
         grid-template-columns: 12fr;
         grid-template-areas:
@@ -90,9 +89,6 @@ body, html {
 header {
     grid-area: header;
     background-color: teal;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     padding: 0.5em;
 }
 nav {
@@ -110,3 +106,22 @@ footer {
     background-color: lightgreen;
     padding: 0.5em;
 }
+/* Flex Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.flex-row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex-1 { flex: 1 0 auto; }
+.flex-2 { flex: 2 0 auto; }
+.flex-3 { flex: 3 0 auto; }
+.flex-4 { flex: 4 0 auto; }
+.flex-5 { flex: 5 0 auto; }
+.flex-6 { flex: 6 0 auto; }
